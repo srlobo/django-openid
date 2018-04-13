@@ -1,8 +1,7 @@
 version: '3'
 services:
     openldap:
-        build:
-            context: docker-openldap/image/
+        image: osixia/openldap:latest
 #        ports:
 #            - "389:389"
 #            - "636:636"
@@ -12,8 +11,7 @@ services:
         networks:
             - internal
     phpldapadmin:
-        build:  
-            context: docker-phpLDAPadmin/image/
+        image: osixia/phpldapadmin:latest
         ports:
             - "3000:80"
         environment:
