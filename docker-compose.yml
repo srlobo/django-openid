@@ -1,0 +1,29 @@
+version: '3'
+services:
+    openldap:
+        build:
+            context: docker-openldap/image/
+#        ports:
+#            - "389:389"
+#            - "636:636"
+        volumes:
+            - openldap-data:/var/lib/ldap
+            - openldap-conf:/etc/ldap/slapd.d
+        networks:
+            - internal
+    phpldapadmin:
+        build:  
+            context: docker-phpLDAPadmin/image/
+        ports:
+            - "3000:80"
+        environment:
+            PHPLDAPADMIN_LDAP_HOSTS: "openldap"
+            PHPLDAPADMIN_HTTPS: "false"
+        networks:
+            - internal
+volumes:
+    openldap-data:
+    openldap-conf:
+
+networks:
+    internal: {}

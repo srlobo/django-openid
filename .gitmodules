@@ -1,6 +1,0 @@
-[submodule "docker-phpLDAPadmin"]
-	path = docker-phpLDAPadmin
-	url = https://github.com/osixia/docker-phpLDAPadmin.git
-[submodule "docker-openldap"]
-	path = docker-openldap
-	url = https://github.com/osixia/docker-openldap.git
