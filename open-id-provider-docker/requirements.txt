@@ -1,0 +1,16 @@
+certifi==2018.1.18
+chardet==3.0.4
+Django==2.0.4
+django-auth-ldap==1.4.0
+django-oidc-provider==0.5.3
+future==0.16.0
+idna==2.6
+pyasn1==0.4.2
+pyasn1-modules==0.2.1
+pycryptodomex==3.6.0
+pyjwkest==1.4.0
+python-ldap==3.0.0
+pytz==2018.4
+requests==2.18.4
+six==1.11.0
+urllib3==1.22

@@ -18,9 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from django.urls import re_path
+from django.views.generic import TemplateView
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    re_path(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
+    re_path(r'^accounts/login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
+    re_path(r'^accounts/logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
     path('admin/', admin.site.urls),
-    re_path(r'^openid/', include('oidc_provider.urls', namespace='oidc_provider')),
+    re_path(r'^', include('oidc_provider.urls', namespace='oidc_provider')),
 
 ]
